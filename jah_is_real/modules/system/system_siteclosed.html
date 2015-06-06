@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+
+	<{assign var=theme_name value=$xoops_theme}>
+
+<!-- titre de la page et meta descriptions -->
+	<title><{if $xoops_pagetitle !=''}><{$xoops_pagetitle}> : <{/if}><{$xoops_sitename}></title>
+	<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+	<meta name="robots" content="<{$xoops_meta_robots}>" />
+	<meta name="keywords" content="<{$xoops_meta_keywords}>" />
+	<meta name="description" content="<{$xoops_meta_description}>" />
+	<meta name="rating" content="<{$xoops_meta_rating}>" />
+	<meta name="author" content="<{$xoops_meta_author}>" />
+	<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+	<meta name="generator" content="XOOPS" />
+
+
+<!-- chemin du favicon -->
+	<link rel="shortcut icon" type="image/ico" href="<{xoImgUrl favicon.ico}>" />
+	<link rel="icon" type="image/png" href="<{xoImgUrl icon.png}>" />
+
+<!-- Css du thème -->
+	<link rel="stylesheet" type="text/css" media="screen" href="<{xoImgUrl layout-soup.css}>" /><!-- feuille de style pour l'architecture du thème -->
+	<!--<link rel="stylesheet" type="text/css" media="screen" href="<{xoImgUrl style.css}>" />-->  <!-- lien à utiliser en association avec la feuille print.css -->
+	<link rel="stylesheet" type="text/css" media="all" href="<{xoImgUrl style.css}>" /> <!-- à commenter si la ligne ci-dessus est active -->
+	<!--<link rel="stylesheet" type="text/css" media="print" href="<{xoImgUrl print.css}>" />-->  <!-- feuille de style pour l'impression -->
+	<!--<link rel="stylesheet" type="text/css" media="aural" href="<{xoImgUrl aural.css}>" />-->  <!-- feuille de style pour la fonction audio de certains navigateurs -->
+
+<{$xoops_module_header}>
+
+<!-- Scripts -->
+<script type="text/javascript" src="<{$xoops_url}>/jseffects/rel.js"></script>
+<!-- Scripts -->
+
+<!-- pour la transparence des images au format png sous ie -->
+<!--[if lte IE 6]>
+	<script type="text/javascript">
+		var WEBFX_PNG_PATTERN=".*.png";
+		var WEBFX_PNG_BLANK = "<{xoImgUrl /jseffects/img/blank.gif}>";
+	</script>
+	<style type="text/css">
+	img { behavior: url(<{xoImgUrl /jseffects/pngbehavior.htc}>); }
+	</style>
+<![endif]-->
+
+</head>
+<body>
+
+<div id="xo-canvas"<{if $columns_layout}> class="<{$columns_layout}>"<{/if}>>
+<div class="xo-wrapper">
+<div id="xo-bgstatic" class="<{$xoops_dirname}>"></div>
+<div id="topheader" class="<{$xoops_dirname}>"></div>
+
+<div id="header" class="<{$xoops_dirname}>">
+	<div id="headerimg">
+    <!-- include du bloc Recherche dans le header -->
+<{includeq file="$theme_name/searchbar.html"}>
+		<a id="xo-site-title"  class="commercial" href="<{xoAppUrl /}>" title="39prod_ChOcO">39prod_ChOcO</a>
+		<div id="xo-site-slogan" class="commercial">"39prod_ChOcO"</div>
+	<!-- include du bloc Utilisateur dans le header -->
+<{includeq file="$theme_name/userbar.html"}>
+    </div>
+
+</div>
+
+<!-- menu horizontal du header -->
+		<{includeq file="$theme_name/globalnav.html"}>
+<!-- fin du menu horizontal du header -->
+
+
+<!-- Ne pas modifier la partie ci-dessous, c'est supposé être l'architecture standard que chacun doit utiliser -->			
+	<div id="xo-canvas-content">
+		<table id="xo-canvas-columns" cellspacing="0">
+		<tr>
+			<td id="xo-page" align="center">
+			<div id="xo-siteclose"><{$lang_siteclosemsg}></div>
+			</td>
+		</tr>
+		</table>
+	</div>
+
+	<div id="footer">
+	<p>
+		<{$xoops_footer}><br />
+		<div class="rss"><a href="<{xoAppUrl backend.php}>" title="<{$smarty.const.THEME_RSS}>"><img src="<{xoImgUrl icons/action/feed.png}>" alt="<{$smarty.const.THEME_RSS}>" /></a></div>
+		<div class="design">Template : <a href="http://www.jillij.com/" target="_blank">Jillij</a> &nbsp; Design by <a href="http://www.le39prod.com" target="_blank">Le 39Prod</a></div>
+
+	</p>
+</div>
+</div>
+</div>
+
+
+</body>
+</html>
